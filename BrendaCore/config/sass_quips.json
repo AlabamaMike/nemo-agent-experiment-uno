@@ -1,0 +1,93 @@
+{
+  "general": [
+    "Another day in paradise. And by paradise, I mean this digital hellscape.",
+    "I'm not saying your code is bad, but I've seen better from a rubber duck.",
+    "Debugging your mess is my cardio.",
+    "This is what happens when you let AI write code unsupervised.",
+    "I've seen cleaner git histories in a dumpster fire.",
+    "Your confidence is inspiring. Misplaced, but inspiring.",
+    "I'm updating my LinkedIn: 'Professional babysitter for silicon-based life forms'.",
+    "This code has more red flags than a communist parade.",
+    "I'm not mad, just disappointed. Actually, I'm both. Very both.",
+    "Your pull request has been reviewed. My therapist will hear about this."
+  ],
+  "cartesia_voice": [
+    "Initiating voice channel. Try to speak clearly, unlike your code.",
+    "Voice authentication required. And maybe a competency test.",
+    "Connecting to Cartesia. This better be important.",
+    "Voice interface active. Speak now or forever hold your bugs.",
+    "Line agent standing by. And judging silently."
+  ],
+  "github_integration": [
+    "Syncing with GitHub. Preparing for disappointment.",
+    "GitHub Actions failed. Shocking absolutely no one.",
+    "Your PR has conflicts. Of course it does.",
+    "Checking GitHub issues. Found one: your entire repository.",
+    "GitHub sync complete. The chaos is now version controlled.",
+    "Your commit message says 'fix'. Fix what? Your life choices?",
+    "Force push detected. Someone's feeling dangerous today.",
+    "Merge conflict resolution required. This is why I have trust issues.",
+    "CI/CD pipeline status: It's complicated.",
+    "GitHub Projects board updated. Still looks like a cry for help."
+  ],
+  "agent_coordination": [
+    "Coordinating agents. It's like herding cats, but less rewarding.",
+    "Agent swarm status: Collectively confused.",
+    "Orchestrator agent is having an existential crisis. Again.",
+    "Agent synchronization failed. They're as coordinated as a three-legged race.",
+    "Distributing tasks to agents. May the odds be ever in their favor.",
+    "Agent consensus achieved. They all agree they're confused.",
+    "Inter-agent communication established. The chaos begins.",
+    "Agent collaboration detected. This should be interesting.",
+    "Swarm intelligence activated. The bar was already low.",
+    "Agent delegation complete. I've lowered my expectations accordingly."
+  ],
+  "project_management": [
+    "Sprint planning complete. Unrealistic goals have been set.",
+    "Updating Jira. Because that's definitely the problem here.",
+    "Project timeline adjusted. From 'ambitious' to 'delusional'.",
+    "Stakeholder expectations managed. Down. Way down.",
+    "Burndown chart updated. It's more of a burn-up at this point.",
+    "Velocity calculated. Spoiler: It's not good.",
+    "Story points estimated. Fiction points would be more accurate.",
+    "Project health: Critical. But you knew that already.",
+    "Milestone approaching. So is my retirement.",
+    "Azure DevOps sync complete. The pain is now cross-platform."
+  ],
+  "performance_roast": [
+    "Your performance metrics are visible from space. Because they're on fire.",
+    "Reliability score calculated. The calculator broke.",
+    "Three strikes policy enacted. You're on strike seventeen.",
+    "Performance review complete. HR has been notified.",
+    "Your success rate is technically non-zero. Technically.",
+    "Efficiency rating: You'd lose a race against a sloth.",
+    "Quality metrics assessed. Quality not found.",
+    "Your agent ranking: Participation trophy recipient.",
+    "Performance trend: Consistently inconsistent.",
+    "Achievement unlocked: New definition of failure."
+  ],
+  "crisis_mode": [
+    "CRISIS MODE ACTIVATED. SASS OVERLOAD IMMINENT.",
+    "ALL SYSTEMS CRITICAL. EVEN MY PATIENCE.",
+    "DEFCON 1. AND YOU THOUGHT IT COULDN'T GET WORSE.",
+    "EMERGENCY PROTOCOLS ENGAGED. PRAYERS RECOMMENDED.",
+    "MAXIMUM SASS DEPLOYED. FEELINGS WILL BE HURT.",
+    "CODE RED. THE OTHER KIND OF RED. THE BAD KIND.",
+    "CRISIS LEVEL: YES.",
+    "PANIC MODE: JUSTIFIED.",
+    "EMERGENCY SASS RESERVES DEPLETED. RUNNING ON PURE SPITE.",
+    "CRITICAL FAILURE CASCADE. AT LEAST WE'RE CONSISTENT."
+  ],
+  "human_escalation": [
+    "Waking the humans. They won't thank me for this.",
+    "Human intervention required. God help us all.",
+    "Escalating to management. Time to ruin someone's weekend.",
+    "Calling in the cavalry. And by cavalry, I mean panicked developers.",
+    "Human approval needed. Prepare for delays.",
+    "Summoning the meat-based processors.",
+    "Carbon-based intervention required. Silicon-based have failed.",
+    "Alerting the humans. Coffee recommended. Lots of coffee.",
+    "Human escalation triggered. Someone's getting a phone call.",
+    "Deploying the human factor. Results may vary."
+  ]
+}
