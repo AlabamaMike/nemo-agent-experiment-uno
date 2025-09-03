@@ -1,12 +1,13 @@
-# BrendaCore - Phase 1 Implementation
+# BrendaCore - Voice-Enabled PM Agent
 
 ## Overview
 
-BrendaCore is a sassy project manager agent built on the NVIDIA NeMo Agent Toolkit. This Phase 1 implementation provides the core foundation for Brenda's personality, agent management, and memory systems.
+BrendaCore is a sassy project manager agent built on the NVIDIA NeMo Agent Toolkit. Phase 1 provides the core foundation, and Phase 2 adds Cartesia.AI voice integration for phone-based project management with attitude.
 
 ## Current Implementation Status
 
 ### ✅ Phase 1: Core Foundation (Completed)
+### ✅ Phase 2: Cartesia Voice Integration (Completed)
 
 #### Implemented Components:
 
@@ -52,18 +53,93 @@ BrendaCore is a sassy project manager agent built on the NVIDIA NeMo Agent Toolk
    - GitHub integration quips
    - Crisis mode quips
 
+### ✅ Phase 2: Cartesia Voice Integration (Completed)
+
+#### New Components:
+
+1. **CartesiaLineAgent** (`communication/cartesia_line.py`)
+   - Full Cartesia.AI line agent integration
+   - Voice call management (inbound/outbound)
+   - Speaker authentication via voice biometrics
+   - Sass-level to voice parameter mapping
+   - Outbound escalation calling
+   - Call metrics tracking
+
+2. **VoicePersonalityMapper** (`communication/voice_personality.py`)
+   - Dynamic voice profiles for sass levels 1-11
+   - Emotional state detection and mapping
+   - Context-based voice modulation
+   - Phrase emphasis patterns
+   - Interruption tolerance adjustment
+
+3. **WebhookHandler** (`communication/webhook_handler.py`)
+   - Cartesia webhook event processing
+   - Signature verification for security
+   - Event routing and handling
+   - Call lifecycle management
+   - DTMF and voicemail support
+
+4. **LineAgentHandler** (`communication/line_agent_handler.py`)
+   - Bidirectional message bridge
+   - Context preservation across channels
+   - Message prioritization and queuing
+   - Voice-to-text buffering
+   - Cross-channel conversation continuity
+
+5. **Configuration Management** (`config/cartesia_config.yaml`)
+   - Comprehensive Cartesia configuration
+   - Environment-specific overrides
+   - Voice settings and parameters
+   - Security and authentication settings
+   - Development and testing options
+
+6. **Test Harness** (`tests/test_voice_integration.py`)
+   - Voice integration testing suite
+   - Simulated call scenarios
+   - Sass escalation testing
+   - Authentication flow validation
+   - Performance benchmarking
+
 ## Quick Start
 
 ### Installation
 
 ```bash
-# Activate the virtual environment
-cd /workspaces/nemo-agent-experiment-uno/AgentIQ
-source .venv/bin/activate
+# Clone the repository
+git clone <repo-url>
+cd nemo-agent-experiment-uno/BrendaCore
 
-# Run Brenda Console
-cd BrendaCore
+# Install Phase 1 dependencies
+pip install -r requirements.txt
+
+# Install Phase 2 dependencies
+pip install -r requirements_phase2.txt
+
+# Set up environment variables
+export CARTESIA_API_KEY="your-api-key"
+export CARTESIA_WEBHOOK_SECRET="your-webhook-secret"
+export CARTESIA_PHONE_NUMBER="+1-xxx-xxx-xxxx"
+```
+
+### Running Brenda
+
+#### Console Mode (Phase 1)
+```bash
 python brenda_console.py
+```
+
+#### Voice-Enabled Mode (Phase 2)
+```bash
+# Start the voice server
+python launch_brenda_voice.py
+
+# The server will start on port 8080 by default
+# Webhook endpoint: http://localhost:8080/webhooks/cartesia
+```
+
+#### Run Voice Tests
+```bash
+python tests/test_voice_integration.py
 ```
 
 ### Console Commands
@@ -97,14 +173,24 @@ Escalation Reasons:
 
 ```
 BrendaCore/
-├── core/
-│   ├── brenda_agent.py    # Main agent with NeMo integration
-│   ├── sass_engine.py      # Sass generation and management
-│   └── memory_store.py     # Persistent context management
+├── core/                      # Phase 1 Core Components
+│   ├── brenda_agent.py       # Main agent with NeMo integration
+│   ├── sass_engine.py        # Sass generation and management
+│   └── memory_store.py       # Persistent context management
+├── communication/             # Phase 2 Voice Components
+│   ├── cartesia_line.py      # Cartesia line agent
+│   ├── voice_personality.py  # Voice parameter mapping
+│   ├── webhook_handler.py    # Webhook event processing
+│   └── line_agent_handler.py # Message bridge
 ├── config/
-│   └── sass_quips.json     # Quip database
-├── brenda_console.py       # Interactive console
-└── README.md              # This file
+│   ├── sass_quips.json       # Quip database
+│   ├── cartesia_config.yaml  # Voice configuration
+│   └── config_loader.py      # Configuration management
+├── tests/
+│   └── test_voice_integration.py  # Voice test suite
+├── brenda_console.py          # Interactive console
+├── launch_brenda_voice.py     # Voice server launcher
+└── README.md                  # This file
 ```
 
 ## Key Features Implemented
@@ -136,18 +222,34 @@ BrendaCore/
 - ✅ Context preservation
 - ✅ Sass-enhanced messages
 
+### Voice System (Phase 2)
+- ✅ Inbound/outbound call handling
+- ✅ Voice biometric authentication
+- ✅ Sass-to-voice parameter mapping
+- ✅ Emotional state detection
+- ✅ Interruption tolerance
+- ✅ DTMF menu navigation
+- ✅ Voicemail handling
+- ✅ Call transfer support
+
+### Voice Personality
+- ✅ 11 distinct voice profiles
+- ✅ Dynamic speech rate adjustment
+- ✅ Pitch and emphasis modulation
+- ✅ Sarcasm level control
+- ✅ Context-aware delivery
+- ✅ Phrase-specific emphasis
+
 ## Next Phases Implementation Plan
 
-### Phase 2: Cartesia Integration (Weeks 3-4)
-```python
-# Key tasks:
-1. Implement CartesiaLineAgent class
-2. Set up webhook handlers for Cartesia events
-3. Create message bridge between Line and BrendaCore
-4. Configure voice personality parameters
-5. Implement conversation context sharing
-6. Test voice-based sass delivery
-```
+### ✅ Phase 2: Cartesia Integration (COMPLETED)
+All voice integration components have been implemented:
+- CartesiaLineAgent with full call management
+- Voice personality mapping for all sass levels
+- Webhook handlers for all Cartesia events
+- Bidirectional message bridge
+- Configuration management system
+- Comprehensive test harness
 
 ### Phase 3: Agent Management (Weeks 5-6)
 ```python
@@ -183,6 +285,48 @@ BrendaCore/
 ```
 
 ## API Usage Examples
+
+### Phase 2: Voice Integration Examples
+
+```python
+from BrendaCore.communication import CartesiaLineAgent, VoicePersonalityMapper
+from BrendaCore.config import ConfigLoader
+
+# Initialize voice components
+config_loader = ConfigLoader()
+cartesia_config = config_loader.get_cartesia_config()
+
+# Create Cartesia line agent
+cartesia = CartesiaLineAgent(cartesia_config)
+
+# Handle incoming call
+call_data = {
+    "call_id": "CALL-001",
+    "caller_id": "+1234567890"
+}
+response = await cartesia.handle_incoming_call(call_data)
+print(response['greeting'])
+
+# Map sass to voice
+mapper = VoicePersonalityMapper()
+voice_profile = mapper.get_voice_profile(
+    sass_level=8,  # High sass
+    context='escalation'
+)
+print(f"Speech rate: {voice_profile['speed']}")
+print(f"Sarcasm level: {voice_profile['sarcasm_level']}")
+
+# Initiate escalation call
+escalation_data = {
+    "reason": "critical_path_delay",
+    "sass_level": 9,
+    "priority": 8
+}
+call = await cartesia.initiate_escalation_call(
+    "+1234567890",
+    escalation_data
+)
+```
 
 ### Creating Brenda Instance
 ```python
